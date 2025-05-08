@@ -11,7 +11,7 @@ export const EditorValidationStatusContext = createContext<{
     setEditorValidationStatus: (status: EditorValidationStatus) => void
 }>({
     editorValidationStatus: EditorValidationStatus.success,
-    setEditorValidationStatus: () => void 0
+    setEditorValidationStatus: () => void 0,
 })
 export const useEditorValidationStatus = () => useContext(EditorValidationStatusContext)
 
@@ -54,7 +54,7 @@ export function ValidationProvider(props: { children: ReactNode }) {
         () => () => {
             parentValidate()
         },
-        [parentValidate]
+        [parentValidate],
     )
 
     const parentSetHasValidationError = useContext(SetHasValidationErrorContext)
